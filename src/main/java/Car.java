@@ -1,10 +1,10 @@
 public class Car {
 	private int position;
-	private String name;
+	private CarName name;
 
-	public Car(int position, String name) {
-		this.position = position;
-		this.name = name;
+	public Car() {
+		this.position = 0;
+		this.name = new CarName();
 	}
 
 	public int getPosition() {
@@ -16,6 +16,13 @@ public class Car {
 	}
 
 	public String getName() {
-		return name;
+		return this.name.getCarName();
+	}
+
+	public void setName(String name) {
+		if (!this.name.validateCarName(name)) {
+			throw new IllegalArgumentException("자동차 이름은 5글자 이상 올 수 없습니다.");
+		}
+		this.name.setName(name);
 	}
 }
