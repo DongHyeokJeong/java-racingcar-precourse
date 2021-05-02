@@ -47,8 +47,30 @@ public class CarsTest {
 
 	@Test
 	public void 우승자_가져오기() {
-		assertThat(cars.getWinner().size()).isEqualTo(1);
-		assertThat(cars.getWinner().get(0).getName()).isEqualTo("one");
+		assertThat(cars.getWinner().size()).isEqualTo(2);
 
+		List<Integer> randomList = new ArrayList<>();
+		randomList.add(3);
+		randomList.add(5);
+
+		cars.play(randomList);
+		assertThat(cars.getWinner().size()).isEqualTo(1);
+		assertThat(cars.getWinner().get(0).getName()).isEqualTo("two");
+	}
+
+	@Test
+	public void 우승자_가져오기_4개자동차() {
+		cars.makeCars("one,two,three,four");
+
+		List<Integer> randomList = new ArrayList<>();
+		randomList.add(3);
+		randomList.add(5);
+		randomList.add(3);
+		randomList.add(5);
+
+		cars.play(randomList);
+		assertThat(cars.getWinner().size()).isEqualTo(2);
+		assertThat(cars.getWinner().get(0).getName()).isEqualTo("two");
+		assertThat(cars.getWinner().get(1).getName()).isEqualTo("four");
 	}
 }

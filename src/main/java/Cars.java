@@ -43,24 +43,6 @@ public class Cars {
 	}
 
 	public List<Car> getWinner() {
-		List<Car> winner = new ArrayList<>();
-		int maxValue = 0;
-		for(Car car: cars) {
-			if (winner.size() == 0) {
-				winner.add(car);
-				maxValue = car.getPosition();
-				break;
-			}
-			if(car.getPosition() > maxValue) {
-				winner = new ArrayList<>();
-				winner.add(car);
-				maxValue = car.getPosition();
-				break;
-			}
-			if(car.getPosition() == maxValue) {
-				winner.add(car);
-			}
-		}
-		return winner;
+		return new Winner().getWinner(cars);
 	}
 }
