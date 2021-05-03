@@ -8,8 +8,8 @@ public class CarRaceGame {
 		String carNames = inputCarNames();
 		System.out.println("시도할 회수는 몇회인가요?");
 		int inputNumber = inputNumber();
-		System.out.println("실행결과");
-		System.out.println(playGame(cars, carNames, inputNumber));
+		System.out.println("\n실행결과");
+		System.out.print(playGame(cars, carNames, inputNumber));
 		System.out.println(printResult(cars.getWinner()));
 	}
 

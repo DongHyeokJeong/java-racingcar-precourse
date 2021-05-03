@@ -7,7 +7,7 @@ public class CarName {
 	}
 
 	public void setName(String carName) {
-		if(!validateCarName(carName)) {
+		if (!validateCarName(carName)) {
 			throw new IllegalArgumentException("자동차 이름은 5글자 이상 올 수 없습니다.");
 		}
 		this.carName = carName;

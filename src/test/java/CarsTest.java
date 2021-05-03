@@ -73,4 +73,10 @@ public class CarsTest {
 		assertThat(cars.getWinner().get(0).getName()).isEqualTo("two");
 		assertThat(cars.getWinner().get(1).getName()).isEqualTo("four");
 	}
+
+	@Test
+	public void 자동차_갯수_가져오기() {
+		cars.makeCars("one,two,three,four");
+		assertThat(cars.getCarNumber()).isEqualTo(4);
+	}
 }

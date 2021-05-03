@@ -11,7 +11,7 @@ public class Winner {
 	}
 
 	public List<Car> getWinner(List<Car> cars) {
-		for(Car car: cars) {
+		for (Car car : cars) {
 			int position = car.getPosition();
 			addWinner(car, position);
 			renewWinner(car, position);
